@@ -19,3 +19,11 @@ hbq-init-packages.el does not normally run, however if you want to set up a new 
 
 TODO:
 Migrate to use-package.
+
+How to use:
+Clone the repo somewhere.
+Then add the path to your .emacs and try to load it with:
+
+    ;; Emacs User Settings
+    (add-to-list 'load-path "/user/hbq/workspace/user_settings/emacs")
+    (load "hbq-init.el")

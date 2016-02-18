@@ -5,9 +5,9 @@
 (global-whitespace-mode 0) ;turn off tabs vs space
 
 ;; CUA mode
-(cua-mode t)
-(setq-default cua-enable-cua-keys nil)
-(setq-default indent-tabs-mode nil) ;; insert spaces, not tabs
+;;(cua-mode t)
+;;(setq-default cua-enable-cua-keys nil)
+;;(setq-default indent-tabs-mode nil) ;; insert spaces, not tabs
 (setq-default truncate-lines t) ;; long lines will go off the screen and not wrap around. One text line per screen line
 
 ;;Setups JEDI autocomplete for python
@@ -61,3 +61,26 @@
 (setq ido-enable-flex-matching t)
 (require 'ido-ubiquitous)
 (ido-ubiquitous-mode 1)
+
+;; VHDL mode hooks
+(defun auto-vhdl-mode-hook()
+  (auto-complete-mode 1))
+(add-hook 'vhdl-mode-hook 'auto-complete-mode)
+;; vhdl mode customisations
+;; override some of imgs syntax highlighting defined in site-start.el
+;; because they look jarring on a dark theme
+(setq vhdl-special-syntax-alist '(
+    ("generic/constant" "\\<[cC]_\\w+\\>" "Gold4" "medium aquamarine" nil)
+    ("type" "\\<\\w+_type\\>" "ForestGreen" "PaleGreen" nil)
+    ("variable" "\\<\\w+_v\\>" "Grey30" "Grey80" nil)
+    ("activelow" "\\<\\(resetn\\|en\\)\\>" "magenta" "#d33682" nil)
+    ("local" "\\<\\w+_l\\>" "brown" "yellow2" nil)
+    ("input" "\\<\\w+_i\\>" "Orange" "Orange" nil)
+    ("output" "\\<\\w+_o\\>" "Orange" "Orange" nil)
+    ("outputlowactiveenable" "\\<\\w+_oen\\>" "Orange" "Orange" nil)
+    ("outputenable" "\\<\\w+_oe\\>" "Orange" "Orange" nil)
+    ("interrupt" "\\<\\w+_irq\\>" "purple" "purple" nil)
+    ("next" "\\<\\(n_\\w+\\|\\w+_adv\\)\\>" "cyan" "royalblue" nil)
+    ("function" "\\<f_\\w+\\>" "cyan" "royalblue" nil)
+    )
+      )

@@ -6,7 +6,7 @@
 (powerline-default-theme)
 (setq powerline-default-separator 'slant) ;; mirrored arrows, 
 
-(nyan-mode)
+;;(nyan-mode)
 
 ;;(set-face-attribute 'mode-line-buffer-id nil :foreground "black" :overline "red" :underline "red")
 (set-face-attribute 'mode-line-buffer-id nil :foreground "#073642")

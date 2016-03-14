@@ -27,7 +27,7 @@
 
 ;; Use the guide-key package to display key-bindings help
 (require 'guide-key)
-(setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x" "C-c" "C-x 5"))
+(setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x" "C-c" "C-x 5" "C-c C-p" "C-c C-t"))
 (setq guide-key/popup-window-position (quote bottom))
 (guide-key-mode 1)  ; Enable guide-key-mode
 
@@ -56,16 +56,19 @@
 
 ;; Turn on ido-mode
 (ido-mode 1)
+(ido-vertical-mode 1)
 (ido-everywhere 1)
 (setq ido-use-filename-at-point 'guess)
 (setq ido-enable-flex-matching t)
+(setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right) ;;Up/Down to move, left/right for dir or histories
 (require 'ido-ubiquitous)
 (ido-ubiquitous-mode 1)
 
 ;; VHDL mode hooks
-(defun auto-vhdl-mode-hook()
-  (auto-complete-mode 1))
-(add-hook 'vhdl-mode-hook 'auto-complete-mode)
+;;(defun auto-vhdl-mode-hook()
+;;  (auto-complete-mode 1))
+;;(add-hook 'vhdl-mode-hook 'auto-complete-mode)
+
 ;; vhdl mode customisations
 ;; override some of imgs syntax highlighting defined in site-start.el
 ;; because they look jarring on a dark theme

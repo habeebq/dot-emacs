@@ -19,15 +19,6 @@
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 
-;; For temporary buffers like occur mode or compilation, open the new popup window horizontally
-(defun split-horizontally-for-temp-buffers ()
-  "Split the window horizontally for temp buffers."
-  (when (and (one-window-p t)
-     	     (not (active-minibuffer-window)))
-    (split-window-horizontally)))    
-
-(add-hook 'temp-buffer-setup-hook 'split-horizontally-for-temp-buffers)
-
 ;; Themes
 (load "hbq-themes.el")
 
@@ -37,5 +28,7 @@
 ;; Setup major and minor modes
 (load "hbq-modes.el")
 
-;; Setup powerline
-(load "hbq-powerline.el")
+;; Setup powerline only if images are supported
+(if (image-type-available-p 'xpm)
+  (load "hbq-powerline.el")
+)

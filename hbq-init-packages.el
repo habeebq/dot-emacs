@@ -14,6 +14,7 @@
         god-mode
         guide-key
         ido-ubiquitous 
+        ido-vertical-mode
         jedi 
         auto-complete
         jedi-core

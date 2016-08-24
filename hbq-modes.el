@@ -16,15 +16,6 @@
 (setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
 
-;;
-(package-initialize)
-;; Use sublimity for smooth scrolling - this is just a visual nicety
-;;(require 'sublimity)
-;;(require 'sublimity-scroll)
-;;(sublimity-mode 0)
-;;(require 'sublimity-map)
-;;(require 'sublimity-attractive)
-
 ;; Use the guide-key package to display key-bindings help
 (require 'guide-key)
 (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x" "C-c" "C-x 5" "C-c C-p" "C-c C-t"))
@@ -75,15 +66,16 @@
 (setq vhdl-special-syntax-alist '(
     ("generic/constant" "\\<[cC]_\\w+\\>" "Gold4" "medium aquamarine" nil)
     ("type" "\\<\\w+_type\\>" "ForestGreen" "PaleGreen" nil)
-    ("variable" "\\<\\w+_v\\>" "Grey30" "Grey80" nil)
+    ("variable" "\\<\\w+_v\\>" "Grey30" "#6c71c4" nil)
     ("activelow" "\\<\\(resetn\\|en\\)\\>" "magenta" "#d33682" nil)
-    ("local" "\\<\\w+_l\\>" "brown" "yellow2" nil)
+    ("local" "\\<\\w+_l\\>" "brown" "#268bd2" nil)
     ("input" "\\<\\w+_i\\>" "Orange" "Orange" nil)
     ("output" "\\<\\w+_o\\>" "Orange" "Orange" nil)
     ("outputlowactiveenable" "\\<\\w+_oen\\>" "Orange" "Orange" nil)
     ("outputenable" "\\<\\w+_oe\\>" "Orange" "Orange" nil)
     ("interrupt" "\\<\\w+_irq\\>" "purple" "purple" nil)
     ("next" "\\<\\(n_\\w+\\|\\w+_adv\\)\\>" "cyan" "royalblue" nil)
-    ("function" "\\<f_\\w+\\>" "cyan" "royalblue" nil)
+    ("state" "\\<STATE_\\w+\\>" "cyan" "#00afaf" nil)
+    ("function" "\\<f_\\w+\\>" "cyan" "#0087ff" nil)
     )
       )
